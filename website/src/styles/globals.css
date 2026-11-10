@@ -112,7 +112,11 @@
   }
 
   .text-gradient {
-    @apply bg-gradient-to-r from-purple-700 via-warmgray-700 to-warmgray-900 bg-clip-text text-transparent;
+    /* Colors are written out, not built from Tailwind's --tw-gradient-* variables:
+       if anything else on the page (e.g. a browser extension) registers those
+       variables, the ends of the gradient turn transparent and the text disappears. */
+    background-image: linear-gradient(to right, theme('colors.purple.700'), theme('colors.warmgray.700'), theme('colors.warmgray.900'));
+    @apply bg-clip-text text-transparent;
   }
 
   .page-hero {
