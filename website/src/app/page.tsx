@@ -92,7 +92,7 @@ export default function Home() {
               <span className="text-gradient">all in one place.</span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-warmgray-500 mb-10 max-w-2xl leading-relaxed font-light">
+            <p className="text-xl md:text-2xl text-warmgray-600 mb-10 max-w-2xl leading-relaxed font-light">
               Noticing memory changes? Not sure where to start? Connect Big Bend families with local helplines, diagnosis, support groups, and care — in one clear, organized site.
             </p>
 
