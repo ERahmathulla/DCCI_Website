@@ -1,5 +1,5 @@
 import { defineQuery } from 'next-sanity'
-import { sanityFetch } from './client'
+import { sanityFetch, sanityFetchFresh } from './client'
 
 export interface SiteEvent {
   _id: string
@@ -75,7 +75,7 @@ function currentMinute() {
 // Upcoming = not yet ended (or not yet started, when there is no end time).
 export async function getUpcomingEvents(county?: string) {
   try {
-    return await sanityFetch<SiteEvent[]>(UPCOMING_EVENTS_QUERY, { now: currentMinute(), county: county ?? null })
+    return await sanityFetchFresh<SiteEvent[]>(UPCOMING_EVENTS_QUERY, { now: currentMinute(), county: county ?? null })
   } catch (error) {
     console.error('Failed to load events from Sanity', error)
     return null
@@ -84,7 +84,7 @@ export async function getUpcomingEvents(county?: string) {
 
 export async function getRecurringPrograms({ programType, county }: { programType?: string; county?: string } = {}) {
   try {
-    return await sanityFetch<RecurringProgram[]>(RECURRING_PROGRAMS_QUERY, {
+    return await sanityFetchFresh<RecurringProgram[]>(RECURRING_PROGRAMS_QUERY, {
       programType: programType ?? null,
       county: county ?? null,
     })

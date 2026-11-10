@@ -11,7 +11,8 @@ export const metadata: Metadata = {
   description: 'Social Clubs, in-home respite, and emergency respite programs for dementia caregivers in the Big Bend region.',
 }
 
-export const revalidate = 60
+// Rendered on every request so visitors always see current Sanity data
+export const dynamic = 'force-dynamic'
 
 const timeRange = (entry: ScheduleEntry) => formatTimeRange(entry.startTime, entry.endTime)
 

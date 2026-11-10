@@ -10,7 +10,8 @@ export const metadata: Metadata = {
   description: 'Free dementia caregiver support groups in the Big Bend area. No RSVP required.',
 }
 
-export const revalidate = 60
+// Rendered on every request so visitors always see current Sanity data
+export const dynamic = 'force-dynamic'
 
 export default async function SupportGroupsPage() {
   // Support groups are managed in Sanity (Studio → Recurring programs → Support group)

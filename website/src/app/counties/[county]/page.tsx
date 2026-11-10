@@ -11,11 +11,8 @@ interface Props {
   params: Promise<{ county: string }>
 }
 
-export const revalidate = 60
-
-export function generateStaticParams() {
-  return OUTREACH_COUNTIES.map(c => ({ county: c.slug }))
-}
+// Rendered on every request so visitors always see current Sanity data
+export const dynamic = 'force-dynamic'
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { county: slug } = await params
