@@ -115,6 +115,16 @@ export default function AboutPage() {
             <p>If you encounter an accessibility barrier, please <a href="mailto:erar20062009@gmail.com">contact us</a>.</p>
           </div>
         </section>
+
+        {/* Privacy */}
+        <section id="privacy" aria-labelledby="privacy-heading">
+          <h2 id="privacy-heading" className="text-2xl font-bold text-warmgray-900 mb-4">Privacy</h2>
+          <div className="prose prose-warmgray max-w-none">
+            <p>
+              This site uses Google Analytics to count visits and see which pages are most helpful. It doesn't collect your name or email address, and we don't use it for advertising.
+            </p>
+          </div>
+        </section>
       </div>
     </div>
   )
