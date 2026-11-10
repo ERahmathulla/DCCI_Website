@@ -3,8 +3,8 @@
 import Script from 'next/script'
 import { usePathname } from 'next/navigation'
 
-// Public tag ID from Google, not a secret
-const TAG_ID = 'GTM-PH8R8KR8'
+// Public Measurement ID from Google, not a secret
+const TAG_ID = 'G-QKB0RKXRK3'
 
 export default function Analytics() {
   const pathname = usePathname()
@@ -14,7 +14,7 @@ export default function Analytics() {
   return (
     <>
       <Script
-        src={`https://www.googletagmanager.com/gtm.js?id=${TAG_ID}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=${TAG_ID}`}
         strategy="afterInteractive"
       />
       <Script id="google-analytics" strategy="afterInteractive">
@@ -22,6 +22,7 @@ export default function Analytics() {
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+  gtag('config', '${TAG_ID}');
         `}
       </Script>
     </>
