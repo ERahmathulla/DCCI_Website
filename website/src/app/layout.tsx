@@ -6,6 +6,7 @@ import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import MobileNav from '@/components/layout/MobileNav'
 import PageTransition from '@/components/layout/PageTransition'
+import Analytics from '@/components/layout/Analytics'
 import SearchOverlay from '@/components/search/SearchOverlay'
 import ProgressBar from '@/components/ui/ProgressBar'
 import { SITE_NAME, SITE_DESCRIPTION } from '@/lib/utils/constants'
@@ -61,6 +62,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
           <Footer />
         </div>
+
+        {/* Production deployment only, so local and preview visits aren't counted */}
+        {process.env.VERCEL_ENV === 'production' && <Analytics />}
       </body>
     </html>
   )
