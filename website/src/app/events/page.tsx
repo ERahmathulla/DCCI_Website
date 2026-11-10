@@ -9,7 +9,8 @@ export const metadata: Metadata = {
   description: 'Upcoming dementia education events, support group schedules, and conferences in the Big Bend region.',
 }
 
-export const revalidate = 60
+// Rendered on every request so visitors always see current Sanity data
+export const dynamic = 'force-dynamic'
 
 export default async function EventsPage() {
   const [events, programs] = await Promise.all([getUpcomingEvents(), getRecurringPrograms()])
