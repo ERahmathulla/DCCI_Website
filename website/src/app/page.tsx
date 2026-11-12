@@ -7,7 +7,6 @@ import {
 import TriageCards from '@/components/home/TriageCards'
 import MapStorySection from '@/components/home/MapStorySection'
 import EmergencyCallout from '@/components/content/EmergencyCallout'
-import NewsletterSignup from '@/components/forms/NewsletterSignup'
 import { FadeIn } from '@/components/ui/FadeIn'
 import { SITE_NAME, SITE_DESCRIPTION, ALZ_ASSOCIATION_HELPLINE } from '@/lib/utils/constants'
 
@@ -225,7 +224,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Newsletter */}
+      {/* Stay up to date */}
       <section
         className="relative py-20 overflow-hidden bg-warmgray-950"
         aria-labelledby="signup-heading"
@@ -247,13 +246,11 @@ export default function Home() {
           <h2 id="signup-heading" className="text-3xl md:text-4xl font-bold mb-4">
             Stay connected to local resources
           </h2>
-          <p className="text-warmgray-200 text-lg mb-10 max-w-lg mx-auto font-light">
-            Get free updates on new resources, support group schedules, and upcoming events in the Big Bend region.
+          <p className="text-lg max-w-lg mx-auto font-light">
+            <Link href="/events" className="text-warmgray-200 underline underline-offset-4 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded">
+              Stay up to date: see upcoming events and programs.
+            </Link>
           </p>
-          <div className="max-w-md mx-auto">
-            <NewsletterSignup />
-          </div>
-          <p className="text-warmgray-300/70 text-xs mt-5">No spam. Unsubscribe any time.</p>
         </div>
       </section>
     </>
